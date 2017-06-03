@@ -1,0 +1,41 @@
+<!--html page for the barchart  -->
+<!DOCTYPE html>
+<html>
+<head>
+<!--title for the barchart   -->
+    <title>Stacked bar</title>
+    <!--D3 source -->
+    <script src="http://d3js.org/d3.v3.js"></script>
+    <!--script for the mocha and chai -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/mocha/3.4.1/mocha.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/chai/3.5.0/chai.js"></script>
+    <script>
+    //condition for the UI test cases
+    if (typeof initMochaPhantomJS === 'function') {
+        initMochaPhantomJS()
+    }
+    mocha.ui('bdd');
+    mocha.reporter('html');
+    expect = chai.expect;
+    </script>
+</head>
+<meta charset="utf-8">
+<body>
+    <div id="mocha"></div>
+    <div id="line"></div>
+    <div id="bar"></div>
+</body>
+<h2 style="text-align:center; color:red">Stacked bar chart for the Theft in Chicago over the years(2001-2016)</h2>
+<!--inserting barchart file -->
+<script src="../js/theftbargraph.js">
+</script>
+<!--inserting test js file -->
+<script src="../UI-Test/d3BarTest.js"></script>
+<script>
+if (window.mochaPhantomJS) {
+    mochaPhantomJS.run();
+} else {
+    mocha.run();
+}
+</script>
+</html>

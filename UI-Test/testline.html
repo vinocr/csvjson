@@ -1,0 +1,46 @@
+<!--html page for the linechart  -->
+<!DOCTYPE html>
+<html>
+<head>
+<!--title for the linechart   -->
+    <title>Line graph</title>
+     <!--D3 source -->
+    <script src="http://d3js.org/d3.v3.js"></script>
+    <!--script for the mocha and chai -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/mocha/3.4.1/mocha.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/chai/3.5.0/chai.js"></script>
+    <script>
+    //condition for the UI test cases
+    if (typeof initMochaPhantomJS === 'function') {
+        initMochaPhantomJS()
+    }
+    mocha.ui('bdd');
+    mocha.reporter('html');
+    expect = chai.expect;
+    </script>
+</head>
+<meta charset="utf-8">
+<body>
+    <div id="mocha"></div>
+    <div id="line"></div>
+    <div id="bar"></div>
+</body>
+<h2 style="text-align:center; color:red">Multi Series Line chart for the Number of Persons Arrested and Not_Arrested for the Assault case over the years(2001-2016)</h2>
+    <div class="container">
+        <div class="jumbotron">
+            <svg id="visualisation" width="1000" height="500"></svg>
+            </div>
+            </div>
+<!--inserting linechart file -->
+<script src="../js/assaultchart.js">
+</script>
+<!--inserting test js file -->
+<script src="../UI-Test/d3LineTest.js"></script>
+<script>
+if (window.mochaPhantomJS) {
+    mochaPhantomJS.run();
+} else {
+    mocha.run();
+}
+</script>
+</html>
